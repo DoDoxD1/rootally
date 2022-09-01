@@ -34,7 +34,7 @@ class TodayProgressWidget extends StatelessWidget {
                   ),
                   Text(
                     // Calculate(controller.names.length),
-                    "${(controller.completed()*100/controller.names.length).toInt()}%",
+                    "${controller.percentage()}%",
                     style: GoogleFonts.notoSans(
                         textStyle: TextStyle(
                       fontSize: 22,
@@ -53,7 +53,7 @@ class TodayProgressWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   child: LinearProgressIndicator(
-                    value: controller.completed()/controller.names.length,
+                    value: controller.percentage()/100,
                     color: Color(0xFF335cc1),
                     backgroundColor: Color(0xFFbababa),
                   ),

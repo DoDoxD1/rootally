@@ -10,15 +10,27 @@ class SessionController extends GetxController{
   late List times = [].obs;
 
   percentage(){
-    return (names.length-2/names.length)*100;
+    if(names.isEmpty) {
+      return 0;
+    } else {
+      return ((2 / names.length) * 100).toInt();
+    }
   }
 
   completed(){
-    return 2;
+    if(names.isEmpty) {
+      return 0;
+    } else {
+      return 2;
+    }
   }
 
   pending(){
-    return names.length-2;
+    if(names.isEmpty) {
+      return 0;
+    } else {
+      return names.length - 2;
+    }
   }
 
   addSession(var name,var date,var time) {
