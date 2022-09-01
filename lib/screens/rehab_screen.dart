@@ -76,69 +76,71 @@ class RehabScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Color(0xFFe6e6e6),
                         borderRadius: BorderRadius.all(Radius.circular(8))),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "Total Sessions",
-                              style: GoogleFonts.notoSans(
-                                  textStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xff2e2e2e))),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.sports_gymnastics,
-                                  size: 28,
-                                  color: Color(0xFF335cc1),
-                                ),
-                                Text(
-                                  "16",
-                                  style: GoogleFonts.notoSans(
-                                      textStyle: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xff2e2e2e))),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        const Text("|"),
-                        Column(
-                          children: [
-                            Text(
-                              "Total Time",
-                              style: GoogleFonts.notoSans(
-                                  textStyle: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(0xff2e2e2e))),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.timer_outlined,
-                                  size: 28,
-                                  color: Colors.yellow.shade800,
-                                ),
-                                Text(
-                                  "16",
-                                  style: GoogleFonts.notoSans(
-                                      textStyle: TextStyle(
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.w500,
-                                          color: Color(0xff2e2e2e))),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
+                    child: Obx(
+                      () => Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                "Total Sessions",
+                                style: GoogleFonts.notoSans(
+                                    textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xff2e2e2e))),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.sports_gymnastics,
+                                    size: 28,
+                                    color: Color(0xFF335cc1),
+                                  ),
+                                  Text(
+                                    "${controller.names.length}",
+                                    style: GoogleFonts.notoSans(
+                                        textStyle: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color(0xff2e2e2e))),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                          const Text("|"),
+                          Column(
+                            children: [
+                              Text(
+                                "Total Time",
+                                style: GoogleFonts.notoSans(
+                                    textStyle: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(0xff2e2e2e))),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.timer_outlined,
+                                    size: 28,
+                                    color: Colors.yellow.shade800,
+                                  ),
+                                  Text(
+                                    "${controller.names.length}",
+                                    style: GoogleFonts.notoSans(
+                                        textStyle: TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w500,
+                                            color: Color(0xff2e2e2e))),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     )),
                 Obx(
                   () => ListView.builder(

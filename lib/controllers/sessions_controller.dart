@@ -3,15 +3,28 @@ import 'package:get/get.dart';
 import 'package:rootally/SessionDataModel.dart';
 
 class SessionController extends GetxController{
-  var names = ['Session 1', 'Session 2', 'Session 3'].obs;
+  late List names = [].obs;
 
-  var dates = ['10-02-2022', '10-02-2022', '10-02-2022'].obs;
+  late List dates = [].obs;
 
-  var times = ['10:20am', '10:20am', '10:20am'].obs;
+  late List times = [].obs;
 
+  percentage(){
+    return (names.length-2/names.length)*100;
+  }
+
+  completed(){
+    return 2;
+  }
+
+  pending(){
+    return names.length-2;
+  }
 
   addSession(var name,var date,var time) {
     names.add(name);
+
+
     dates.add(date);
     times.add(time);
   }

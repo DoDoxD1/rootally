@@ -22,8 +22,10 @@ class MyApp extends StatelessWidget {
   final screens = [
     const HomeScreen(),
     RehabScreen(),
-    const HomeScreen(),
-    RehabScreen(),
+    Scaffold(body: Center(child: Text("Practice"),),),
+    Scaffold(body: Center(child: Text("Profile"),),),
+    // const HomeScreen(),
+    // RehabScreen(),
   ];
 
   @override

@@ -9,7 +9,8 @@ class TodayProgressWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Obx(
+      () => Container(
         decoration: BoxDecoration(
           border: Border.all(color: Color(0xffbababa), width: 3),
           borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -33,7 +34,7 @@ class TodayProgressWidget extends StatelessWidget {
                   ),
                   Text(
                     // Calculate(controller.names.length),
-                    "50%",
+                    "${(controller.completed()*100/controller.names.length).toInt()}%",
                     style: GoogleFonts.notoSans(
                         textStyle: TextStyle(
                       fontSize: 22,
@@ -52,7 +53,7 @@ class TodayProgressWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   child: LinearProgressIndicator(
-                    value: 0.5,
+                    value: controller.completed()/controller.names.length,
                     color: Color(0xFF335cc1),
                     backgroundColor: Color(0xFFbababa),
                   ),
@@ -87,7 +88,7 @@ class TodayProgressWidget extends StatelessWidget {
                               textAlign: TextAlign.start,
                             ),
                             Text(
-                              "2 Sessions",
+                              "${controller.completed()} Sessions",
                               style: GoogleFonts.notoSans(
                                   textStyle: TextStyle(
                                       fontSize: 14,
@@ -123,7 +124,7 @@ class TodayProgressWidget extends StatelessWidget {
                               textAlign: TextAlign.start,
                             ),
                             Text(
-                              "2 Sessions",
+                              "${controller.pending()} Sessions",
                               style: GoogleFonts.notoSans(
                                   textStyle: TextStyle(
                                       fontSize: 14,
@@ -141,6 +142,7 @@ class TodayProgressWidget extends StatelessWidget {
             ],
           ),
         ),
-      );
+      ),
+    );
   }
 }
